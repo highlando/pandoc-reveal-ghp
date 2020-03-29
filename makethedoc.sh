@@ -13,4 +13,4 @@ pandoc $MDFILE -o index.html \
 # pandoc $MDFILE --filter pandoc-citeproc -t beamer -o base-theme-slides.pdf -H def.tex
 # 
 
-pandoc $MDFILE --slide-level 2 -t beamer -o slides-body.tex
+pandoc $MDFILE --slide-level 2 -t beamer --filter pandoc-citeproc -o slides-body.tex
