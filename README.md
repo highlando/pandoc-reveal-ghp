@@ -14,6 +14,7 @@ git add slides.md
 git commit -m 'updated the markdown source'
 
 git checkout pandoc-outputs
+git merge master
 source makethedoc.sh
 git add index.html
 git commit -m 'updated the index.html'
