@@ -1,0 +1,127 @@
+\section{Introduction}\label{introduction}
+
+\begin{frame}{What is a Benchmark}
+
+I haven't found a clear definition of what a benchmark is. However, here
+is what I think makes a \emph{numerical example} a benchmark
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Common acceptance as a benchmark} -- there are other
+  publications that discuss the same setup.
+\item
+  \textbf{Practical relevance} -- either in applications or as a testing
+  field for numerical algorithms.
+\item
+  \textbf{Reliable reference data} -- so that others can test their
+  codes and methods against it.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{What is a Benchmark}
+
+\begin{quote}
+Basically, everything that would motivate a fellow researchers to use
+the provided setup and data to \emph{benchmark} their code.
+\end{quote}
+
+\end{frame}
+
+\begin{frame}{Fluid Structure Interaction}
+
+\begin{figure}
+\centering
+\includegraphics{pics/fsi2.gif}
+\caption{Example of a cylinder with a tail}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Changing domain.
+\item
+  Coupling of Models (and scales).
+\end{itemize}
+
+\end{frame}
+
+\section{The model}\label{the-model}
+
+\begin{frame}{Verbose}
+
+\begin{itemize}
+\tightlist
+\item
+  A fluid flows through a channel with a sphere that can rotate freely.
+\item
+  The stresses at the sphere/fluid interface induce rotation.
+\item
+  The \emph{no-slip} condition induces motion of the flow at the
+  interface.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{The flow}
+
+\begin{equation*}
+        \rho_f\left(\partial_t v + (v \cdot\nabla)v \right) - \nabla \cdot \sigma(v ,p) = 0, \quad \nabla\cdot v  = 0,
+\end{equation*}
+
+with the stress-tensor
+
+\begin{equation*}
+    \sigma (v,p) = \rho _ f\nu\left( \nabla v+\nabla v^T \right) - p I
+\end{equation*}
+
+and with standard boundary conditions and in particular
+
+\begin{equation*}
+    v = v_s, \quad \text{on } \mathcal I,
+\end{equation*}
+
+where \(v_s\) is the solid's velocity at the fluid-solid interface.
+
+\end{block}
+
+\end{frame}
+
+\section{Implementation}\label{implementation}
+
+\begin{frame}{Code Base}
+
+There were 5 independent implementations using established libraries:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://ngsolve.org/}{Netgen/NGSolve}
+\item
+  \href{https://fenicsproject.org/download/}{FEniCS/dolfin}
+\item
+  Gascoigne
+\item
+  \href{https://www.scipy.org}{SciPy}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Code Availability}
+
+Full data sets for the results as well as all implementations can be
+found at
+
+\begin{quote}
+\href{https://doi.org/10.5281/zenodo.3253455}{DOI:
+10.5281/zenodo.3253455}
+\end{quote}
+
+\end{frame}
+
+\section{Conclusion}\label{conclusion}
+
