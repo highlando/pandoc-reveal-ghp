@@ -1,4 +1,3 @@
-
 # Reveal.js and Custom Beamer Themes by Pandoc and Markdown
 
 Using markdown, one can compile a slidedeck for a presentation in no time.
@@ -56,4 +55,3 @@ to watch the `index.html` at [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 On the `master` branch the local versions are used. On the `gh-pages` we use
 versions provided via *cdn*s.
-
