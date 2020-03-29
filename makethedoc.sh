@@ -12,15 +12,5 @@ pandoc $MDFILE -o index.html \
 # ## base theme slides -- works well
 # pandoc $MDFILE --filter pandoc-citeproc -t beamer -o base-theme-slides.pdf -H def.tex
 # 
-# # ## just create the body of the slides
-# pandoc $MDFILE --slide-level 2 -t beamer -o slides-body.tex
-# # ## delete the bottom 3 lines (where there is the references)
-# sed -i '$d' slides-body.tex
-# sed -i '$d' slides-body.tex
-# sed -i '$d' slides-body.tex
-# 
-# pdflatex -interaction=nonstopmode mpi-style-skeleton.tex
-# pdflatex -interaction=nonstopmode mpi-style-skeleton.tex
-# bibtex mpi-style-skeleton.aux
-# pdflatex -interaction=nonstopmode mpi-style-skeleton.tex
-# latexmk -c
+
+pandoc $MDFILE --slide-level 2 -t beamer -o slides-body.tex
