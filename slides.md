@@ -1,5 +1,5 @@
 ---
-title: 
+title: Markdown Pandoc reveal.js Beamer
 author: 
 - Jan Heiland
 - Heiland, Jan
