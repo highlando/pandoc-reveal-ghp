@@ -9,8 +9,5 @@ pandoc $MDFILE -o index.html \
     # -V revealjs-url=node_modules/reveal.js \
     # --mathjax='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' \
 
-# ## base theme slides -- works well
 # pandoc $MDFILE --filter pandoc-citeproc -t beamer -o base-theme-slides.pdf -H def.tex
-# 
-
 pandoc $MDFILE --slide-level 2 -t beamer --filter pandoc-citeproc -o slides-body.tex
