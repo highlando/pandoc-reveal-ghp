@@ -9,7 +9,7 @@ This repo provides example files and an example workflow how the core of the
 slides are written in markdown and then merged into a branch that includes the
 beamer styles or the reveal.js add ons.
 
-# Workflow for reveal.js on github
+# Workflow for markdown - pandoc - reveal.js 
 
 1. on `master`, one changes the `md` source file.
 
