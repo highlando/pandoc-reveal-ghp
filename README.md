@@ -29,9 +29,10 @@ git merge master
 source makethedoc.sh
 git add index.html
 git commit -m 'updated the index.html'
+LSTCHSH=$(git rev-parse HEAD)
 
 git checkout gh-pages
-git merge pandoc-outputs
+git cherry-pick $LSTCHSH  # merge only the last commit
 ```
 
 # Pandoc and (local) mathjax and reveal.js
@@ -67,7 +68,8 @@ git merge master
 source makethedoc.sh
 git add slides-body.tex
 git commit -m 'updated the slides body'
+LSTCHSH=$(git rev-parse HEAD)
 
 git checkout mpi-style
-git merge pandoc-outputs
+git cherry-pick $LSTCHSH
 ```
