@@ -1,4 +1,15 @@
-# Workflow
+# Reveal.js and Custom Beamer Themes by Pandoc and Markdown
+
+Using markdown, one can compile a slidedeck for a presentation in no time.
+
+The finishing, say the adaption to a custom beamer theme or the inclusion of
+reveal.js niceties, is better done by hand.
+
+This repo provides example files and an example workflow how the core of the
+slides are written in markdown and then merged into a branch that includes the
+beamer styles or the reveal.js add ons.
+
+# Workflow for markdown - pandoc - reveal.js 
 
 1. on `master`, one changes the `md` source file.
 
@@ -23,7 +34,7 @@ git checkout gh-pages
 git merge pandoc-outputs
 ```
 
-# Pandoc and mathjax and reveal.js
+# Pandoc and (local) mathjax and reveal.js
 
 One can install [*reveal.js*](https://github.com/hakimel/reveal.js) and
 [*mathjax*](https://github.com/mathjax/MathJax-src) using `npm` like
@@ -42,3 +53,21 @@ npx http-server
 
 to watch the `index.html` at [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
+On the `master` branch the local versions are used. On the `gh-pages` we use
+versions provided via *cdn*s.
+
+# Workflow for Pandoc - texfile - custom beamer theme
+```
+git checkout master
+git add slides.md
+git commit -m 'updated the markdown source'
+
+git checkout pandoc-outputs
+git merge master
+source makethedoc.sh
+git add slides-body.tex
+git commit -m 'updated the slides body'
+
+git checkout mpi-style
+git merge pandoc-outputs
+```
