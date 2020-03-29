@@ -55,3 +55,19 @@ to watch the `index.html` at [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 On the `master` branch the local versions are used. On the `gh-pages` we use
 versions provided via *cdn*s.
+
+# Workflow for Pandoc - texfile - custom beamer theme
+```
+git checkout master
+git add slides.md
+git commit -m 'updated the markdown source'
+
+git checkout pandoc-outputs
+git merge master
+source makethedoc.sh
+git add slides-body.tex
+git commit -m 'updated the slides body'
+
+git checkout mpi-style
+git merge pandoc-outputs
+```
