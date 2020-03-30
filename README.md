@@ -22,10 +22,10 @@ realization.
 
 1. on `master`, one changes the `md` source file.
 
-2. on `pandoc-outputs` the outputs `index.html` and `slides-body.tex` that are
-   produced with *pandoc* are put into the git index so that
+2. on `pandoc-outputs` the output `index.html` that is
+   produced with *pandoc* is put into the git index so that
 
-3. they can be merged into `gh-pages`. On `gh-pages`, one may also change *html*
+3. it can be merged into `gh-pages`. On `gh-pages`, one may also change *html*
    attributes directly that go beyond what is possible with *markdown*.
 
 ```
