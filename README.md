@@ -38,7 +38,7 @@ git merge master
 source makethedoc.sh
 git add index.html
 git commit -m 'updated the index.html'
-LSTCHSH=$(git rev-parse HEAD)
+LSTCHSH=$(git rev-parse HEAD)  # get the hash of the last commit
 
 git checkout gh-pages
 git cherry-pick $LSTCHSH  # merge only the last commit
