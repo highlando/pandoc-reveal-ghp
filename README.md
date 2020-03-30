@@ -9,6 +9,15 @@ This repo provides example files and an example workflow how the core of the
 slides are written in markdown and then merged into a branch that includes the
 beamer styles or the reveal.js add ons.
 
+The slides are live at
+[http://janheiland.de/pandoc-reveal-ghp/](http://janheiland.de/pandoc-reveal-ghp/).
+To control them remotely, open a [master
+instance](http://janheiland.de/pandoc-reveal-ghp/?s=3b8b9997d1f16ed4) in a
+different browser or device. This feature is provided by the *multiplex* module
+of *reveal.js*. See the approach by
+[seanho00](https://github.com/seanho00/reveal-multiplex) for a lightweight
+realization.
+
 # Workflow for markdown - pandoc - reveal.js 
 
 1. on `master`, one changes the `md` source file.
@@ -41,12 +50,12 @@ One can install [*reveal.js*](https://github.com/hakimel/reveal.js) and
 [*mathjax*](https://github.com/mathjax/MathJax-src) using `npm` like
 
 ```
-npm install mathjax-full
+npm install mathjax@3
 npm install ${path-to-reveal.js-repo}
 ```
 
-add the `node_modules/...` paths to the *pandoc* script and start a local http
-server via
+add the `node_modules/...` paths to the *pandoc* script like the `makethedoc.sh`
+and start a local http server via
 
 ```
 npx http-server
