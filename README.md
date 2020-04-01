@@ -82,3 +82,18 @@ LSTCHSH=$(git rev-parse HEAD)
 git checkout mpi-style
 git cherry-pick $LSTCHSH
 ```
+
+# Lessons learned 
+
+If one wants to include macro definitions for MathJax, say in `def.tex`, one can include them
+in the pandoc call via
+
+```
+-H <(echo '\['; cat def.tex; echo '\]') \
+```
+
+so that they are included in the header.
+
+However, this somehow breaks the formatting in the reveal.js slides. E.g., the
+navigation symbols do not fit on the page anymore. A workaround is to define the
+macros on a slide before they are used for the first time.
