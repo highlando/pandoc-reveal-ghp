@@ -20,10 +20,11 @@ realization.
 
 # Workflow for markdown - pandoc - reveal.js 
 
-1. on `master`, one changes the `md` source file.
+1. on `master`, one changes the `slides.md` source file and watches the output
+   `slides.html` as it is produced by pandoc.
 
-2. on `pandoc-outputs` the output `index.html` that is
-   produced with *pandoc* is put into the git index so that
+2. on `pandoc-outputs` the output `slides.html` is renamed to 
+   `index.html` and put into the git index so that
 
 3. it can be merged into `gh-pages`. On `gh-pages`, one may also change *html*
    attributes directly that go beyond what is possible with *markdown*.
@@ -36,6 +37,7 @@ git commit -m 'updated the markdown source'
 git checkout pandoc-outputs
 git merge master
 source makethedoc.sh
+mv slides.html index.html
 git add index.html
 git commit -m 'updated the index.html'
 LSTCHSH=$(git rev-parse HEAD)  # get the hash of the last commit
@@ -55,13 +57,19 @@ npm install ${path-to-reveal.js-repo}
 ```
 
 add the `node_modules/...` paths to the *pandoc* script like the `makethedoc.sh`
+and simply use
+
+```
+firefox slides.html
+```
+
 and start a local http server via
 
 ```
 npx http-server
 ```
 
-to watch the `index.html` at [http://127.0.0.1:8080](http://127.0.0.1:8080)
+to watch the `slides.html` at [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 On the `master` branch the local versions are used. On the `gh-pages` we use
 versions provided via *cdn*s.
