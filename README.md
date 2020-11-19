@@ -53,7 +53,7 @@ One can install [*reveal.js*](https://github.com/hakimel/reveal.js) and
 
 ```
 npm install mathjax@3
-npm install ${path-to-reveal.js-repo}
+npm install reveal.js
 ```
 
 add the `node_modules/...` paths to the *pandoc* script like the `makethedoc.sh`
@@ -62,14 +62,6 @@ and simply use
 ```
 firefox slides.html
 ```
-
-and start a local http server via
-
-```
-npx http-server
-```
-
-to watch the `slides.html` at [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 On the `master` branch the local versions are used. On the `gh-pages` we use
 versions provided via *cdn*s.
