@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jan Heiland">
+  <meta name="author" content="Heiland, Jan">
+  <title>Markdown – Pandoc – reveal.js – Beamer</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Markdown – Pandoc – reveal.js – Beamer</h1>
+  <p class="author">Jan Heiland</p>
+  <p class="author">Heiland, Jan</p>
+  <p class="date">GAMM CSE – 21 November 2019</p>
+</section>
+
+<section>
+<section id="introduction" class="title-slide slide level1">
+<h1>Introduction</h1>
+
+</section>
+<section id="what-is-a-benchmark" class="slide level2">
+<h2>What is a Benchmark</h2>
+<p>I haven’t found a clear definition of what a benchmark is. <!-- (maybe in contrast to a *numerical example*). --> However, here is what I think makes a <em>numerical example</em> a benchmark</p>
+<ol type="1">
+<li><strong>Common acceptance as a benchmark</strong> – there are other publications that discuss the same setup.</li>
+<li><strong>Practical relevance</strong> – either in applications or as a testing field for numerical algorithms.</li>
+<li><strong>Reliable reference data</strong> – so that others can test their codes and methods against it.</li>
+</ol>
+</section>
+<section id="what-is-a-benchmark-1" class="slide level2">
+<h2>What is a Benchmark</h2>
+<blockquote>
+<p>Basically, everything that would motivate a fellow researchers to use the provided setup and data to <em>benchmark</em> their code.</p>
+</blockquote>
+</section>
+<section id="fluid-structure-interaction" class="slide level2">
+<h2>Fluid Structure Interaction</h2>
+<figure>
+<img data-src="pics/fsi2.gif" alt="Example of a cylinder with a tail" /><figcaption aria-hidden="true">Example of a cylinder with a tail</figcaption>
+</figure>
+<ul>
+<li>Changing domain.</li>
+<li>Coupling of Models (and scales).</li>
+</ul>
+</section></section>
+<section>
+<section id="the-model" class="title-slide slide level1">
+<h1>The model</h1>
+
+</section>
+<section id="verbose" class="slide level2">
+<h2>Verbose</h2>
+<ul>
+<li>A fluid flows through a channel with a sphere that can rotate freely.</li>
+<li>The stresses at the sphere/fluid interface induce rotation.</li>
+<li>The <em>no-slip</em> condition induces motion of the flow at the interface.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="the-flow">The flow</h3>
+<p><span class="math display">\[\begin{equation*}
+        \rho_f\left(\partial_t v + (v \cdot\nabla)v \right) - \nabla \cdot \sigma(v ,p) = 0, \quad \nabla\cdot v  = 0,
+\end{equation*}\]</span> with the stress-tensor <span class="math display">\[\begin{equation*}
+    \sigma (v,p) = \rho _ f\nu\left( \nabla v+\nabla v^T \right) - p I
+\end{equation*}\]</span> and with standard boundary conditions and in particular <span class="math display">\[\begin{equation*}
+    v = v_s, \quad \text{on } \mathcal I,
+\end{equation*}\]</span> where <span class="math inline">\(v_s\)</span> is the solid’s velocity at the fluid-solid interface.</p>
+</section></section>
+<section>
+<section id="implementation" class="title-slide slide level1">
+<h1>Implementation</h1>
+
+</section>
+<section id="code-base" class="slide level2" data-background-image="pics/grid.png">
+<h2 data-background-image="pics/grid.png">Code Base</h2>
+<p>There were 5 independent implementations using established libraries:</p>
+<ul>
+<li><a href="https://ngsolve.org/">Netgen/NGSolve</a></li>
+<li><a href="https://fenicsproject.org/download/">FEniCS/dolfin</a></li>
+<li>Gascoigne</li>
+<li><a href="https://www.scipy.org">SciPy</a></li>
+</ul>
+</section>
+<section id="code-availability" class="slide level2" data-background-image="pics/zenodo-screenshot.png">
+<h2 data-background-image="pics/zenodo-screenshot.png">Code Availability</h2>
+<p>Full data sets for the results as well as all implementations can be found at</p>
+<blockquote>
+<p><a href="https://doi.org/10.5281/zenodo.3253455">DOI: 10.5281/zenodo.3253455</a></p>
+</blockquote>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1">
+<h1>Conclusion</h1>
+
+</section>
+<section id="references" class="slide level2 unnumbered">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references hanging-indent" role="doc-bibliography">
+<div id="ref-WahRLHM19">
+<p>von Wahl, Henry, Thomas Richter, Christoph Lehrenfeld, Jan Heiland, and Piotr Minakowski. 2019. “Numerical Benchmarking of Fluid-Rigid Body Interactions.” <em>Computers &amp; Fluids</em>. <a href="https://doi.org/10.1016/j.compfluid.2019.104290">https://doi.org/10.1016/j.compfluid.2019.104290</a>.</p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Number of slides away from the current that are visible
+        viewDistance: 15,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 960,
+        // Factor of the display size that should remain empty around the content
+        margin: 0.05,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
