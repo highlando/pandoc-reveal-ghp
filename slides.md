@@ -68,7 +68,7 @@ where $v_s$ is the solid's velocity at the fluid-solid interface.
 
 # Implementation
 
-## Code Base
+## Code Base {data-background-image="pics/grid.png"}
 
 There were 5 independent implementations using established libraries:
 
@@ -78,7 +78,7 @@ There were 5 independent implementations using established libraries:
  * [SciPy](https://www.scipy.org)
 
 
-## Code Availability
+## Code Availability {data-background-image="pics/zenodo-screenshot.png"}
 
 Full data sets for the results as well as all implementations can be found at
 
