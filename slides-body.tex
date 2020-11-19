@@ -1,12 +1,12 @@
-\section{Introduction}\label{introduction}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
 \begin{frame}{What is a Benchmark}
-
+\protect\hypertarget{what-is-a-benchmark}{}
 I haven't found a clear definition of what a benchmark is. However, here
 is what I think makes a \emph{numerical example} a benchmark
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   \textbf{Common acceptance as a benchmark} -- there are other
@@ -18,20 +18,18 @@ is what I think makes a \emph{numerical example} a benchmark
   \textbf{Reliable reference data} -- so that others can test their
   codes and methods against it.
 \end{enumerate}
-
 \end{frame}
 
 \begin{frame}{What is a Benchmark}
-
+\protect\hypertarget{what-is-a-benchmark-1}{}
 \begin{quote}
 Basically, everything that would motivate a fellow researchers to use
 the provided setup and data to \emph{benchmark} their code.
 \end{quote}
-
 \end{frame}
 
 \begin{frame}{Fluid Structure Interaction}
-
+\protect\hypertarget{fluid-structure-interaction}{}
 \begin{figure}
 \centering
 \includegraphics{pics/fsi2.gif}
@@ -45,13 +43,13 @@ the provided setup and data to \emph{benchmark} their code.
 \item
   Coupling of Models (and scales).
 \end{itemize}
-
 \end{frame}
 
-\section{The model}\label{the-model}
+\hypertarget{the-model}{%
+\section{The model}\label{the-model}}
 
 \begin{frame}{Verbose}
-
+\protect\hypertarget{verbose}{}
 \begin{itemize}
 \tightlist
 \item
@@ -62,39 +60,28 @@ the provided setup and data to \emph{benchmark} their code.
   The \emph{no-slip} condition induces motion of the flow at the
   interface.
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}
-
 \begin{block}{The flow}
-
+\protect\hypertarget{the-flow}{}
 \begin{equation*}
         \rho_f\left(\partial_t v + (v \cdot\nabla)v \right) - \nabla \cdot \sigma(v ,p) = 0, \quad \nabla\cdot v  = 0,
-\end{equation*}
-
-with the stress-tensor
-
-\begin{equation*}
+\end{equation*} with the stress-tensor \begin{equation*}
     \sigma (v,p) = \rho _ f\nu\left( \nabla v+\nabla v^T \right) - p I
-\end{equation*}
-
-and with standard boundary conditions and in particular
-
+\end{equation*} and with standard boundary conditions and in particular
 \begin{equation*}
     v = v_s, \quad \text{on } \mathcal I,
-\end{equation*}
-
-where \(v_s\) is the solid's velocity at the fluid-solid interface.
-
+\end{equation*} where \(v_s\) is the solid's velocity at the fluid-solid
+interface.
 \end{block}
-
 \end{frame}
 
-\section{Implementation}\label{implementation}
+\hypertarget{implementation}{%
+\section{Implementation}\label{implementation}}
 
 \begin{frame}{Code Base}
-
+\protect\hypertarget{code-base}{}
 There were 5 independent implementations using established libraries:
 
 \begin{itemize}
@@ -108,11 +95,10 @@ There were 5 independent implementations using established libraries:
 \item
   \href{https://www.scipy.org}{SciPy}
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Code Availability}
-
+\protect\hypertarget{code-availability}{}
 Full data sets for the results as well as all implementations can be
 found at
 
@@ -120,18 +106,19 @@ found at
 \href{https://doi.org/10.5281/zenodo.3253455}{DOI:
 10.5281/zenodo.3253455}
 \end{quote}
-
 \end{frame}
 
-\section{Conclusion}\label{conclusion}
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
 
 \begin{frame}{References}
-
+\protect\hypertarget{references}{}
 \hypertarget{refs}{}
-\hypertarget{ref-WahRLHM19}{}
+\begin{cslreferences}
+\leavevmode\hypertarget{ref-WahRLHM19}{}%
 von Wahl, Henry, Thomas Richter, Christoph Lehrenfeld, Jan Heiland, and
 Piotr Minakowski. 2019. ``Numerical Benchmarking of Fluid-Rigid Body
 Interactions.'' \emph{Computers \& Fluids}.
-doi:\href{https://doi.org/10.1016/j.compfluid.2019.104290}{10.1016/j.compfluid.2019.104290}.
-
+\url{https://doi.org/10.1016/j.compfluid.2019.104290}.
+\end{cslreferences}
 \end{frame}
