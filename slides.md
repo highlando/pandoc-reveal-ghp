@@ -80,9 +80,14 @@ There were 5 independent implementations using established libraries:
 
 ## Code Availability {data-background-image="pics/zenodo-screenshot.png"}
 
+. . .
+
+::: {style="position: absolute; width: 60%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 40px; text-align: left;"}
 Full data sets for the results as well as all implementations can be found at
 
 > [DOI: 10.5281/zenodo.3253455](https://doi.org/10.5281/zenodo.3253455)
+
+:::
 
 # Conclusion
 
